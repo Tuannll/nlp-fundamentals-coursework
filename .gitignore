@@ -1,0 +1,30 @@
+# Python byte-compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Virtual environments
+venv/
+env/
+.env
+
+# Large raw datasets (> 100MB, uploaded via GitHub Releases)
+03-vietnamese-word2vec-skipgram/datatrain.txt
+*.txt.gz
+*.zip
+
+# Pretrained binary weights & checkpoints
+*.pt
+*.pth
+*.bin
+*.model*
+04-deep-learning-bilstm-sentiment/best_model.pt
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini

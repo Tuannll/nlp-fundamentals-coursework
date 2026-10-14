@@ -1,0 +1,42 @@
+name: CI - Coursework Check
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  validate:
+    name: Lint, Dependencies & Notebook Validation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Verify Notebook Files Exist
+        run: |
+          test -f 01-text-preprocessing-vectorization/text_preprocessing_vectorization.ipynb
+          test -f 02-sentiment-classification-ml/sentiment_classification_ml.ipynb
+          test -f 03-vietnamese-word2vec-skipgram/vietnamese_word2vec_skipgram.ipynb
+          test -f 04-deep-learning-bilstm-sentiment/bilstm_sentiment_analysis.ipynb
+
+      - name: Validate Notebook JSON Integrity
+        run: |
+          python -m json.tool 01-text-preprocessing-vectorization/text_preprocessing_vectorization.ipynb > /dev/null
+          python -m json.tool 02-sentiment-classification-ml/sentiment_classification_ml.ipynb > /dev/null
+          python -m json.tool 03-vietnamese-word2vec-skipgram/vietnamese_word2vec_skipgram.ipynb > /dev/null
+          python -m json.tool 04-deep-learning-bilstm-sentiment/bilstm_sentiment_analysis.ipynb > /dev/null
+          echo "All 4 Jupyter notebooks are valid JSON!"

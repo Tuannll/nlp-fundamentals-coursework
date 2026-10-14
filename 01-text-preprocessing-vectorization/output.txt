@@ -1,0 +1,65 @@
+============================================================
+PHẦN 1: CHUẨN BỊ DỮ LIỆU
+============================================================
+Tổng số văn bản: 8
+
+Ví dụ văn bản gốc:
+1. Sản phẩm này rất tốt, tôi rất hài lòng với chất lượng
+2. Dịch vụ giao hàng nhanh, nhân viên nhiệt tình
+3. Chất lượng sản phẩm tệ, không đáng tiền
+
+============================================================
+PHẦN 2: TÁCH TỪ TIẾNG VIỆT (WORD SEGMENTATION)
+============================================================
+
+Văn bản gốc: Sản phẩm này rất tốt, tôi rất hài lòng với chất lượng
+Sau tách từ: Sản_phẩm này rất tốt , tôi rất hài_lòng với chất_lượng
+
+============================================================
+PHẦN 3: LOẠI BỎ TỪ DỪNG (STOPWORD REMOVAL)
+============================================================
+
+Văn bản đã tách từ: sản_phẩm này rất tốt , tôi rất hài_lòng với chất_lượng
+Sau khi loại từ dừng: sản_phẩm tốt hài_lòng chất_lượng
+
+============================================================
+PHẦN 4: BAG OF WORDS (BoW)
+============================================================
+
+Kích thước từ vựng: 29
+Kích thước ma trận BoW: 8 x 29
+
+--- Sử dụng sklearn CountVectorizer ---
+Số lượng từ vựng: 25
+Kích thước ma trận: (8, 25)
+
+Một số từ trong từ điển: ['cao' 'chất_lượng' 'chậm' 'chậm_trễ' 'dịch_vụ' 'giao' 'hài_lòng' 'hàng'
+ 'lần' 'mong_đợi']
+
+============================================================
+PHẦN 5: TF-IDF (Term Frequency - Inverse Document Frequency)
+============================================================
+
+--- Sử dụng sklearn TfidfVectorizer ---
+Kích thước ma trận TF-IDF: (8, 25)
+
+============================================================
+PHẦN 6: PHÂN TÍCH VÀ SO SÁNH KẾT QUẢ
+============================================================
+
+Văn bản 1: Sản phẩm này rất tốt, tôi rất hài lòng với chất lượng
+
+Top 5 từ theo BoW:
+--- Document 1 ---
+chất_lượng: 1
+hài_lòng: 1
+sản_phẩm: 1
+tốt: 1
+
+Top 5 từ theo TF-IDF:
+--- Document 1 ---
+hài_lòng: 0.5679
+tốt: 0.5679
+chất_lượng: 0.4901
+sản_phẩm: 0.3386
+

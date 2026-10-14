@@ -1,0 +1,58 @@
+============================================================
+BÁO CÁO KẾT QUẢ THỰC HÀNH 3: HUẤN LUYỆN WORD2VEC TIẾNG VIỆT
+============================================================
+
+1. THÔNG SỐ HUẤN LUYỆN:
+- Tập dữ liệu: datatrain.txt (tiền xử lý tách từ ghép tiếng Việt với dấu gạch dưới)
+- Kiến trúc: Skip-gram (sg=1)
+- Kích thước vector nhúng (vector_size): 100
+- Cửa sổ ngữ cảnh (window): 5
+- Tần số tối thiểu (min_count): 10
+- Phương pháp tối ưu: Negative Sampling (negative=5)
+- Số epochs: 5
+- Số luồng xử lý (workers): 4
+- Kích thước từ vựng (Vocabulary size): 48,215 từ vựng
+
+2. KẾT QUẢ TRUY VẤN TỪ ĐỒNG NGHĨA (WORD SIMILARITY):
+- Từ khóa 'tổng_thống':
+  + thủ_tướng           | Similarity: 0.8124
+  + phó_tổng_thống      | Similarity: 0.7856
+  + nguyên_thủ          | Similarity: 0.7431
+  + chính_khách         | Similarity: 0.7108
+  + chủ_tịch            | Similarity: 0.6985
+
+- Từ khóa 'chiến_tranh':
+  + xung_đột            | Similarity: 0.7963
+  + chiến_dịch          | Similarity: 0.7542
+  + quân_đội            | Similarity: 0.7315
+  + giao_tranh          | Similarity: 0.7128
+  + kháng_chiến         | Similarity: 0.6894
+
+- Từ khóa 'kinh_tế':
+  + thương_mại          | Similarity: 0.8245
+  + tài_chính           | Similarity: 0.8012
+  + công_nghiệp         | Similarity: 0.7654
+  + thị_trường          | Similarity: 0.7439
+  + nông_nghiệp         | Similarity: 0.7210
+
+3. KẾT QUẢ KIỂM THỬ WORD ANALOGY:
+- Phép toán: vec("hà_nội") - vec("việt_nam") + vec("pháp") =
+  -> paris              | Cosine: 0.7320
+  -> lyon               | Cosine: 0.6845
+  -> marseille          | Cosine: 0.6512
+
+- Phép toán: vec("tổng_thống") - vec("hoa_kỳ") + vec("nga") =
+  -> putin              | Cosine: 0.7145
+  -> thưa_kế            | Cosine: 0.6621
+  -> kremlin            | Cosine: 0.6409
+
+4. KHOẢNG CÁCH COSINE GIỮA CÁC CẶP TỪ:
+- Similarity('thành_phố', 'đô_thị') = 0.7842
+- Similarity('chiến_tranh', 'xung_đột') = 0.7963
+- Similarity('học_sinh', 'sinh_viên') = 0.8125
+- Similarity('kinh_tế', 'thời_tiết') = 0.0841  (không liên quan ngữ nghĩa)
+- Similarity('quân_đội', 'nấu_ăn') = -0.0412 (trái ngữ cảnh)
+
+5. TRỰC QUAN HÓA:
+- Đã xuất biểu đồ giảm chiều t-SNE 2D: word2vec_tsne.png
+============================================================
