@@ -8,7 +8,7 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)](https://pytorch.org/)
 [![Gensim](https://img.shields.io/badge/Gensim-Word2Vec-forestgreen?style=flat-square)](https://radimrehurek.com/gensim/)
 [![Underthesea](https://img.shields.io/badge/Underthesea-Vietnamese_NLP-orange?style=flat-square)](https://github.com/undertheseanlp/underthesea)
-[![CI](https://img.shields.io/badge/CI-Passing-brightgreen?style=flat-square&logo=githubactions&logoColor=white)](https://github.com/USER/REPO/actions)
+[![CI](https://img.shields.io/github/actions/workflow/status/Tuannll/nlp-fundamentals-coursework/ci.yml?branch=main&style=flat-square&logo=githubactions&logoColor=white&label=CI)](https://github.com/Tuannll/nlp-fundamentals-coursework/actions)
 [![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
 
 **[Tổng quan](#tong-quan) • [Chi tiết Labs](#chi-tiet-labs) • [Tải Model & Data](#tai-nguyen) • [Cài đặt & Khởi chạy](#cai-dat)**
@@ -70,12 +70,12 @@ Repository đóng gói 4 bài thực hành (Labs) chuyên sâu theo lộ trình 
 <a id="tai-nguyen"></a>
 ## 📦 Tải dữ liệu lớn & Trọng số mô hình (Releases)
 
-Do giới hạn dung lượng lưu trữ của Git, các file dữ liệu thô và trọng số nhị phân được lưu trữ tại [GitHub Releases](https://github.com/USER/REPO/releases):
+Do giới hạn dung lượng lưu trữ của Git, các file dữ liệu thô và trọng số nhị phân được lưu trữ tại [GitHub Releases](https://github.com/Tuannll/nlp-fundamentals-coursework/releases):
 
 | File | Dung lượng | Vị trí đặt sau khi tải | Mô tả | Link tải |
 | :--- | :---: | :--- | :--- | :---: |
-| **`datatrain.txt`** | 888 MB | `03-vietnamese-word2vec-skipgram/datatrain.txt` | 7 triệu dòng văn bản Wikipedia tiếng Việt | [Tải từ Release](https://github.com/USER/REPO/releases/tag/v1.0.0) |
-| **`best_model.pt`** | 31.6 MB | `04-deep-learning-bilstm-sentiment/best_model.pt` | Trọng số PyTorch BiLSTM tốt nhất đã huấn luyện | [Tải từ Release](https://github.com/USER/REPO/releases/tag/v1.0.0) |
+| **`datatrain.txt`** | 888 MB | `03-vietnamese-word2vec-skipgram/datatrain.txt` | 7 triệu dòng văn bản Wikipedia tiếng Việt | [Tải từ Release](https://github.com/Tuannll/nlp-fundamentals-coursework/releases/tag/v1.0.0) |
+| **`best_model.pt`** | 31.6 MB | `04-deep-learning-bilstm-sentiment/best_model.pt` | Trọng số PyTorch BiLSTM tốt nhất đã huấn luyện | [Tải từ Release](https://github.com/Tuannll/nlp-fundamentals-coursework/releases/tag/v1.0.0) |
 
 > [!TIP]
 > Tải nhanh qua GitHub CLI:
@@ -91,8 +91,8 @@ Do giới hạn dung lượng lưu trữ của Git, các file dữ liệu thô v
 
 ### 1. Khởi tạo môi trường
 ```bash
-git clone https://github.com/USER/REPO.git
-cd REPO
+git clone https://github.com/Tuannll/nlp-fundamentals-coursework.git
+cd nlp-fundamentals-coursework
 
 # Tạo và kích hoạt môi trường ảo Python 3.10
 conda create -n nlp-labs python=3.10 -y
